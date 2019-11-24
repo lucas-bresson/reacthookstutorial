@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetch } from './hooks';
 
-function Stories() {
+const Stories = () => {
   const stories = useFetch('https://news-proxy-server.appspot.com/topstories', []);
 
   return (
@@ -21,6 +21,6 @@ function Stories() {
       })}
     </div>
   );
-}
+};
 
 export default Stories;

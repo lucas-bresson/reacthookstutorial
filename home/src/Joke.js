@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetch } from './hooks';
 
-function Joke() {
+const Joke = () => {
   const { setup, punchline } = useFetch('https://official-joke-api.appspot.com/jokes/random', {});
 
   return (
@@ -13,6 +13,6 @@ function Joke() {
       </p>
     </div>
   );
-}
+};
 
 export default Joke;
