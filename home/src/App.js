@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Joke from './Joke';
 import Stories from './Stories';
 import Tasks from './Tasks';
+import Matrix from './Matrix';
 import Gallery from './Gallery';
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
       <button onClick={toggleShowGallery}>{showGallery ? 'Hide' : 'Show'} Gallery</button>
       <hr />
       <Stories />
+      <hr />
+      <Matrix />
     </div>
   );
 }

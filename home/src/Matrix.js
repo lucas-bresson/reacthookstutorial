@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import PICTURES from './data/pictures';
+import MATRIX_FRAMES from './data/matrix';
 import { useDynamicTransition } from './hooks';
 
-const SECONDS = 1000;
-const minimumDelay = 1 * SECONDS;
+const minimumDelay = 10;
 const minimumIncrement = 1;
 
-const Gallery = () => {
-  const [delay, setDelay] = useState(3 * SECONDS);
-  const [increment, setIncrement] = useState(1);
+const Matrix = () => {
+  const [delay, setDelay] = useState(500);
+  const [increment, setIncrement] = useState(5);
 
   const index = useDynamicTransition({
     delay,
     increment,
-    length: PICTURES.length,
+    length: MATRIX_FRAMES.length,
   });
 
   const updateDelay = event => {
-    const delay = Number(event.target.value) * SECONDS;
+    const delay = Number(event.target.value);
 
     setDelay(delay < minimumDelay ? minimumDelay : delay);
   };
@@ -25,20 +24,20 @@ const Gallery = () => {
   const updateIncrement = event => {
     const increment = Number(event.target.value);
 
-    setIncrement(increment < minimumIncrement ? minimumDelay : increment);
+    setIncrement(increment < minimumIncrement ? minimumIncrement : increment);
   };
 
   return (
-    <div className="Gallery">
-      <h3>Gallery</h3>
-      <img src={PICTURES[index].image} alt="gallery" />
+    <div className="Matrix">
+      <h3>Matrix</h3>
+      <img src={MATRIX_FRAMES[index]} alt="matrix-animation" />
       <div className="multiform">
         <div>
-          Gallery transition delay (seconds)
+          Matrix transition delay (milliseconds)
           <input type="number" onChange={updateDelay} />
         </div>
         <div>
-          Gallery increment
+          Matrix increment
           <input type="number" onChange={updateIncrement} />
         </div>
       </div>
@@ -46,4 +45,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Matrix;
