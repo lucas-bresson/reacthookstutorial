@@ -1,10 +1,10 @@
 import React, { useReducer, useEffect } from 'react';
-import reducer, { initialState } from './state/reducer';
-import Context from './context';
-import PubSub from './pubsub';
-import PublishMessage from './components/PublishMessage';
-import MessageBoard from './components/MessageBoard';
-import SetUsername from './components/SetUsername';
+import reducer, { initialState } from '../state/reducer';
+import Context from '../context';
+import PubSub from '../pubsub';
+import PublishMessage from './PublishMessage';
+import MessageBoard from './MessageBoard';
+import SetUsername from './SetUsername';
 
 const pubsub = new PubSub();
 
